@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Histoires Magiques",
+    "slug": "histoires-magiques",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourname.histoiresmagiques"
+    },
+    "android": {
+      "package": "com.yourname.histoiresmagiques"
+    }
+  }
+}
