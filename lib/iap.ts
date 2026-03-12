@@ -3,7 +3,7 @@ import { Platform } from "react-native";
 import {
   initConnection,
   endConnection,
-  getSubscriptions,
+  fetchProducts,
   requestSubscription,
   purchaseUpdatedListener,
   purchaseErrorListener,
@@ -54,7 +54,7 @@ export function useIAP() {
         await initConnection();
         setConnected(true);
 
-        const subs = await getSubscriptions({ skus: SKUS });
+        const subs = await fetchProducts({ skus: SKUS });
         subs.forEach((s) => {
           const price = (s as any).localizedPrice ?? "";
           if (s.productId === SKU_MONTHLY) setMonthlyPrice(price);
