@@ -87,8 +87,8 @@ export const translations = {
     ageUnit: "ans",
     heroLabels: {
       princesse: "Princesse", dragon: "Dragon", lapin: "Lapin", chevalier: "Chevalier",
-      fee: "Fée", pirate: "Pirate", sorcier: "Sorcier", robot: "Robot",
-      sirene: "Sirène", licorne: "Licorne", dinosaure: "Dinosaure", superhero: "Super-héros",
+      fee: "Fée", pirate: "Pirate", camion: "Camion", robot: "Robot", dinosaure: "Dinosaure",
+      sorcier: "Sorcier", sirene: "Sirène", licorne: "Licorne", superhero: "Super-héros",
     },
     placeLabels: {
       foret: "Forêt Enchantée", chateau: "Château Magique", ocean: "Fond de l'Océan",
@@ -183,8 +183,8 @@ export const translations = {
     ageUnit: "yrs",
     heroLabels: {
       princesse: "Princess", dragon: "Dragon", lapin: "Rabbit", chevalier: "Knight",
-      fee: "Fairy", pirate: "Pirate", sorcier: "Wizard", robot: "Robot",
-      sirene: "Mermaid", licorne: "Unicorn", dinosaure: "Dinosaur", superhero: "Superhero",
+      fee: "Fairy", pirate: "Pirate", camion: "Truck", robot: "Robot", dinosaure: "Dinosaur",
+      sorcier: "Wizard", sirene: "Mermaid", licorne: "Unicorn", superhero: "Superhero",
     },
     placeLabels: {
       foret: "Enchanted Forest", chateau: "Magic Castle", ocean: "Ocean Floor",
@@ -279,8 +279,8 @@ export const translations = {
     ageUnit: "años",
     heroLabels: {
       princesse: "Princesa", dragon: "Dragón", lapin: "Conejo", chevalier: "Caballero",
-      fee: "Hada", pirate: "Pirata", sorcier: "Mago", robot: "Robot",
-      sirene: "Sirena", licorne: "Unicornio", dinosaure: "Dinosaurio", superhero: "Superhéroe",
+      fee: "Hada", pirate: "Pirata", camion: "Camión", robot: "Robot", dinosaure: "Dinosaurio",
+      sorcier: "Mago", sirene: "Sirena", licorne: "Unicornio", superhero: "Superhéroe",
     },
     placeLabels: {
       foret: "Bosque Encantado", chateau: "Castillo Mágico", ocean: "Fondo del Océano",
@@ -375,8 +375,8 @@ export const translations = {
     ageUnit: "岁",
     heroLabels: {
       princesse: "公主", dragon: "龙", lapin: "兔子", chevalier: "骑士",
-      fee: "仙女", pirate: "海盗", sorcier: "巫师", robot: "机器人",
-      sirene: "美人鱼", licorne: "独角兽", dinosaure: "恐龙", superhero: "超级英雄",
+      fee: "仙女", pirate: "海盗", camion: "卡车", robot: "机器人", dinosaure: "恐龙",
+      sorcier: "巫师", sirene: "美人鱼", licorne: "独角兽", superhero: "超级英雄",
     },
     placeLabels: {
       foret: "魔法森林", chateau: "魔法城堡", ocean: "海底",
@@ -471,8 +471,8 @@ export const translations = {
     ageUnit: "वर्ष",
     heroLabels: {
       princesse: "राजकुमारी", dragon: "ड्रैगन", lapin: "खरगोश", chevalier: "शूरवीर",
-      fee: "परी", pirate: "समुद्री डाकू", sorcier: "जादूगर", robot: "रोबोट",
-      sirene: "जलपरी", licorne: "यूनिकॉर्न", dinosaure: "डायनासोर", superhero: "सुपरहीरो",
+      fee: "परी", pirate: "समुद्री डाकू", camion: "ट्रक", robot: "रोबोट", dinosaure: "डायनासोर",
+      sorcier: "जादूगर", sirene: "जलपरी", licorne: "यूनिकॉर्न", superhero: "सुपरहीरो",
     },
     placeLabels: {
       foret: "जादुई जंगल", chateau: "जादुई महल", ocean: "समुद्र की गहराई",
@@ -567,8 +567,8 @@ export const translations = {
     ageUnit: "سنة",
     heroLabels: {
       princesse: "أميرة", dragon: "تنين", lapin: "أرنب", chevalier: "فارس",
-      fee: "جنية", pirate: "قرصان", sorcier: "ساحر", robot: "روبوت",
-      sirene: "حورية", licorne: "وحيد القرن", dinosaure: "ديناصور", superhero: "بطل خارق",
+      fee: "جنية", pirate: "قرصان", camion: "شاحنة", robot: "روبوت", dinosaure: "ديناصور",
+      sorcier: "ساحر", sirene: "حورية", licorne: "وحيد القرن", superhero: "بطل خارق",
     },
     placeLabels: {
       foret: "الغابة المسحورة", chateau: "القلعة السحرية", ocean: "قاع المحيط",
@@ -663,8 +663,8 @@ export const translations = {
     ageUnit: "বছর",
     heroLabels: {
       princesse: "রাজকুমারী", dragon: "ড্রাগন", lapin: "খরগোশ", chevalier: "বীর যোদ্ধা",
-      fee: "পরী", pirate: "জলদস্যু", sorcier: "জাদুকর", robot: "রোবট",
-      sirene: "মৎস্যকন্যা", licorne: "ইউনিকর্ন", dinosaure: "ডায়নোসর", superhero: "সুপারহিরো",
+      fee: "পরী", pirate: "জলদস্যু", camion: "ট্রাক", robot: "রোবট", dinosaure: "ডায়নোসর",
+      sorcier: "জাদুকর", sirene: "মৎস্যকন্যা", licorne: "ইউনিকর্ন", superhero: "সুপারহিরো",
     },
     placeLabels: {
       foret: "মায়াবী বন", chateau: "জাদুর দুর্গ", ocean: "সমুদ্রের তলদেশ",
@@ -759,8 +759,8 @@ export const translations = {
     ageUnit: "anos",
     heroLabels: {
       princesse: "Princesa", dragon: "Dragão", lapin: "Coelho", chevalier: "Cavaleiro",
-      fee: "Fada", pirate: "Pirata", sorcier: "Feiticeiro", robot: "Robô",
-      sirene: "Sereia", licorne: "Unicórnio", dinosaure: "Dinossauro", superhero: "Super-herói",
+      fee: "Fada", pirate: "Pirata", camion: "Caminhão", robot: "Robô", dinosaure: "Dinossauro",
+      sorcier: "Feiticeiro", sirene: "Sereia", licorne: "Unicórnio", superhero: "Super-herói",
     },
     placeLabels: {
       foret: "Floresta Encantada", chateau: "Castelo Mágico", ocean: "Fundo do Oceano",
@@ -855,8 +855,8 @@ export const translations = {
     ageUnit: "лет",
     heroLabels: {
       princesse: "Принцесса", dragon: "Дракон", lapin: "Кролик", chevalier: "Рыцарь",
-      fee: "Фея", pirate: "Пират", sorcier: "Волшебник", robot: "Робот",
-      sirene: "Русалка", licorne: "Единорог", dinosaure: "Динозавр", superhero: "Супергерой",
+      fee: "Фея", pirate: "Пират", camion: "Грузовик", robot: "Робот", dinosaure: "Динозавр",
+      sorcier: "Волшебник", sirene: "Русалка", licorne: "Единорог", superhero: "Супергерой",
     },
     placeLabels: {
       foret: "Заколдованный Лес", chateau: "Волшебный Замок", ocean: "Дно Океана",
@@ -951,8 +951,8 @@ export const translations = {
     ageUnit: "歳",
     heroLabels: {
       princesse: "お姫様", dragon: "ドラゴン", lapin: "ウサギ", chevalier: "騎士",
-      fee: "妖精", pirate: "海賊", sorcier: "魔法使い", robot: "ロボット",
-      sirene: "人魚", licorne: "ユニコーン", dinosaure: "恐竜", superhero: "スーパーヒーロー",
+      fee: "妖精", pirate: "海賊", camion: "トラック", robot: "ロボット", dinosaure: "恐竜",
+      sorcier: "魔法使い", sirene: "人魚", licorne: "ユニコーン", superhero: "スーパーヒーロー",
     },
     placeLabels: {
       foret: "魔法の森", chateau: "魔法の城", ocean: "海の底",
