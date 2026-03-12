@@ -18,7 +18,8 @@ const HEROS = [
   { id: "princesse", emoji: "👸" }, { id: "dragon", emoji: "🐉" },
   { id: "lapin", emoji: "🐰" }, { id: "chevalier", emoji: "⚔️" },
   { id: "fee", emoji: "🧚" }, { id: "pirate", emoji: "🏴‍☠️" },
-  { id: "sorcier", emoji: "🧙" }, { id: "robot", emoji: "🤖" },
+  { id: "camion", emoji: "🚛" }, { id: "robot", emoji: "🤖" },
+  { id: "sorcier", emoji: "🧙" },
   { id: "sirene", emoji: "🧜" }, { id: "licorne", emoji: "🦄" },
   { id: "dinosaure", emoji: "🦕" }, { id: "superhero", emoji: "🦸" },
 ];
