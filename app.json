@@ -5,12 +5,34 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f0c29"
+    },
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.yourname.histoiresmagiques"
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gasnier.histoiresmagiques",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "package": "com.yourname.histoiresmagiques"
-    }
+      "package": "com.gasnier.histoiresmagiques",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0f0c29"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d1d91e66-8dc6-49e3-ba6b-767462670c2e"
+      }
+    },
+    "plugins": [
+      "expo-font",
+      "./plugins/with-iap"
+    ]
   }
 }
