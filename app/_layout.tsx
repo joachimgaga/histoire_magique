@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Slot, useRouter, useSegments } from "expo-router";
 import { supabase } from "@/lib/supabase";
 import { useStore } from "@/lib/store";
-import { View, Text, Animated, Easing, StyleSheet } from "react-native";
+import { View, Text, Animated, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import type { Session } from "@supabase/supabase-js";
 import {
@@ -34,7 +34,7 @@ export default function RootLayout() {
   const [splashDone, setSplashDone] = useState(false);
 
   useEffect(() => {
-    if (!fontsLoaded) return;
+    // Start immediately on mount — no need to wait for fonts
     Animated.sequence([
       // Moon appears with spring
       Animated.parallel([
@@ -48,7 +48,7 @@ export default function RootLayout() {
       // Hold 0.8s then done
       Animated.delay(800),
     ]).start(() => setSplashDone(true));
-  }, [fontsLoaded]);
+  }, []);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
