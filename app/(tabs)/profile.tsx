@@ -88,6 +88,45 @@ export default function ProfileScreen() {
     ]);
   };
 
+  const handleDeleteAccount = () => {
+    Alert.alert(
+      "Supprimer mon compte",
+      "Cette action est irréversible. Toutes tes histoires et données seront définitivement supprimées.",
+      [
+        { text: t.cancel, style: "cancel" },
+        {
+          text: "Supprimer",
+          style: "destructive",
+          onPress: () => {
+            Alert.alert(
+              "Confirmation",
+              "Es-tu sûr(e) ? Toutes tes données seront perdues définitivement.",
+              [
+                { text: t.cancel, style: "cancel" },
+                {
+                  text: "Oui, supprimer",
+                  style: "destructive",
+                  onPress: async () => {
+                    try {
+                      const uid = profile!.id;
+                      await supabase.from("stories").delete().eq("user_id", uid);
+                      await supabase.from("child_profiles").delete().eq("user_id", uid);
+                      await supabase.from("profiles").delete().eq("id", uid);
+                      await supabase.rpc("delete_user");
+                      await supabase.auth.signOut();
+                    } catch (e: any) {
+                      Alert.alert("Erreur", "Impossible de supprimer le compte. Contacte le support.");
+                    }
+                  },
+                },
+              ]
+            );
+          },
+        },
+      ]
+    );
+  };
+
   const handleShareApp = () => {
     Share.share({
       title: "Histoires Magiques",
@@ -204,6 +243,11 @@ export default function ProfileScreen() {
             <TouchableOpacity onPress={handleLogout} style={s.logoutBtn}>
               <Ionicons name="log-out-outline" size={18} color="#f87171" />
               <Text style={s.logoutTxt}>{t.logout}</Text>
+            </TouchableOpacity>
+
+            {/* Delete account */}
+            <TouchableOpacity onPress={handleDeleteAccount} style={s.deleteBtn}>
+              <Text style={s.deleteTxt}>Supprimer mon compte</Text>
             </TouchableOpacity>
 
           </View>
@@ -341,6 +385,8 @@ const s = StyleSheet.create({
 
   logoutBtn: { flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 16, borderRadius: 16, backgroundColor: "rgba(239,68,68,0.08)", borderWidth: 1, borderColor: "rgba(239,68,68,0.2)" },
   logoutTxt: { color: "#f87171", fontFamily: F.bold, fontSize: 14 },
+  deleteBtn: { alignItems: "center", paddingVertical: 14, marginTop: 8 },
+  deleteTxt: { color: C.white30, fontSize: 12, fontFamily: F.semi, textDecorationLine: "underline" },
 
   // Language modal
   langRow: { flexDirection: "row", alignItems: "center", paddingVertical: 14, paddingHorizontal: 4, gap: 14 },
