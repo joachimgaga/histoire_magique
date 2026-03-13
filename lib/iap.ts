@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { Platform } from "react-native";
+import Constants from "expo-constants";
 import {
   initConnection,
   endConnection,
@@ -17,6 +18,8 @@ import { useStore } from "./store";
 
 export const SKU_MONTHLY = "premium_monthly";
 export const SKU_YEARLY  = "premium_yearly";
+
+const isExpoGo = Constants.appOwnership === "expo";
 
 const SKUS = [SKU_MONTHLY, SKU_YEARLY];
 
@@ -50,6 +53,7 @@ export function useIAP() {
     let errorListener:    ReturnType<typeof purchaseErrorListener>;
 
     const setup = async () => {
+      if (isExpoGo) return; // Nitro Modules not supported in Expo Go
       try {
         await initConnection();
         setConnected(true);
