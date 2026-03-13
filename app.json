@@ -20,6 +20,7 @@
     },
     "android": {
       "package": "com.gasnier.histoiresmagiques",
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#0f0c29"
