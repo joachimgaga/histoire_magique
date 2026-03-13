@@ -2,7 +2,7 @@
   "expo": {
     "name": "Histoires Magiques",
     "slug": "histoires-magiques",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "icon": "./assets/icon.png",
@@ -20,7 +20,6 @@
     },
     "android": {
       "package": "com.gasnier.histoiresmagiques",
-      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#0f0c29"
