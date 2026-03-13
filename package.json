@@ -5,7 +5,10 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "ios": "expo start --ios"
+    "ios": "expo start --ios",
+    "build:android": "node scripts/bump-version.js && git add app.json && git commit -m 'chore: bump version' && git push && eas build --platform android --profile production",
+    "build:ios": "node scripts/bump-version.js && git add app.json && git commit -m 'chore: bump version' && git push && eas build --platform ios --profile production",
+    "build:all": "node scripts/bump-version.js && git add app.json && git commit -m 'chore: bump version' && git push && eas build --platform all --profile production"
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.4.2",
