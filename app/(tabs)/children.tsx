@@ -80,21 +80,24 @@ export default function ChildrenScreen() {
       favorite_places: favoritePlaces.length > 0 ? favoritePlaces : null,
     };
 
-    if (editingChild) {
-      const { data, error } = await supabase.from("child_profiles")
-        .update(payload).eq("id", editingChild.id).select().single();
+    try {
+      if (editingChild) {
+        const { data, error } = await supabase.from("child_profiles")
+          .update(payload).eq("id", editingChild.id).select().single();
+        if (error) { Alert.alert("Erreur", error.message); return; }
+        if (data) updateChildProfile(data);
+      } else {
+        const { data, error } = await supabase.from("child_profiles")
+          .insert({ user_id: profile!.id, ...payload }).select().single();
+        if (error) { Alert.alert("Erreur", error.message); return; }
+        if (data) addChildProfile(data);
+      }
+      setShowModal(false);
+    } catch (e: any) {
+      Alert.alert("Erreur", e.message || "Une erreur est survenue.");
+    } finally {
       setLoading(false);
-      if (error) { Alert.alert("Erreur", error.message); return; }
-      if (data) updateChildProfile(data);
-    } else {
-      const { data, error } = await supabase.from("child_profiles")
-        .insert({ user_id: profile!.id, ...payload }).select().single();
-      setLoading(false);
-      if (error) { Alert.alert("Erreur", error.message); return; }
-      if (data) addChildProfile(data);
     }
-
-    setShowModal(false);
   };
 
   const handleDelete = (id: string, childName: string) => {
