@@ -3,7 +3,7 @@ import {
   View, Text, TouchableOpacity, FlatList,
   TextInput, Alert, StyleSheet, Modal, ActivityIndicator, ScrollView,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { supabase } from "@/lib/supabase";
 import { useStore, ChildProfile } from "@/lib/store";
@@ -37,6 +37,7 @@ export default function ChildrenScreen() {
   const { profile, childProfiles, setChildProfiles, addChildProfile, updateChildProfile, removeChildProfile } = useStore();
   const t = useT(profile?.language);
   const { isTablet } = useTablet();
+  const insets = useSafeAreaInsets();
   const [showPaywall, setShowPaywall] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [editingChild, setEditingChild] = useState<ChildProfile | null>(null);
@@ -186,7 +187,7 @@ export default function ChildrenScreen() {
 
         <Modal visible={showModal} transparent animationType="slide">
           <View style={s.modalOverlay}>
-            <View style={s.modalCard}>
+            <View style={[s.modalCard, { paddingBottom: 24 + insets.bottom }]}>
               <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={s.modalTitle}>
                   {editingChild ? `Modifier ${editingChild.name}` : t.newChildProfile}

@@ -2,7 +2,7 @@ import {
   View, Text, TouchableOpacity, Alert, StyleSheet,
   ScrollView, Linking, Modal, TextInput, ActivityIndicator, Share,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
@@ -35,6 +35,7 @@ export default function ProfileScreen() {
   const t = useT(profile?.language);
   const { isTablet, contentWidth } = useTablet();
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const [showPaywall, setShowPaywall] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showLangModal, setShowLangModal] = useState(false);
@@ -257,7 +258,7 @@ export default function ProfileScreen() {
       {/* Language picker modal */}
       <Modal visible={showLangModal} transparent animationType="slide">
         <View style={s.modalOverlay}>
-          <View style={s.modalCard}>
+          <View style={[s.modalCard, { paddingBottom: 24 + insets.bottom }]}>
             <Text style={s.modalTitle}>{t.storyLanguage}</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
               {LANGUAGES.map((lang, i) => {
@@ -284,7 +285,7 @@ export default function ProfileScreen() {
       {/* Edit profile modal */}
       <Modal visible={showEditModal} transparent animationType="slide">
         <View style={s.modalOverlay}>
-          <View style={s.modalCard}>
+          <View style={[s.modalCard, { paddingBottom: 24 + insets.bottom }]}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <Text style={s.modalTitle}>Modifier mon profil</Text>
               <Text style={s.modalLabel}>Avatar</Text>
