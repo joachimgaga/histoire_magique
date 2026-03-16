@@ -37,10 +37,16 @@ export default function TabsLayout() {
           <Ionicons name={focused ? "book" : "book-outline"} size={24} color={color} />
         ),
       }} />
+      <Tabs.Screen name="characters" options={{
+        title: "Héros",
+        tabBarIcon: ({ color, focused }) => (
+          <Ionicons name={focused ? "people" : "people-outline"} size={24} color={color} />
+        ),
+      }} />
       <Tabs.Screen name="children" options={{
         title: t.tabChildren,
         tabBarIcon: ({ color, focused }) => (
-          <Ionicons name={focused ? "people" : "people-outline"} size={24} color={color} />
+          <Ionicons name={focused ? "happy" : "happy-outline"} size={24} color={color} />
         ),
       }} />
       <Tabs.Screen name="profile" options={{

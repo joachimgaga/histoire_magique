@@ -16,7 +16,7 @@ import { C, GRAD, F } from "@/lib/theme";
 export default function RootLayout() {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const { setProfile, setChildProfiles, setStories } = useStore();
+  const { setProfile, setChildProfiles, setStories, setCharacters } = useStore();
   const router = useRouter();
   const segments = useSegments();
 
@@ -63,18 +63,26 @@ export default function RootLayout() {
         setSession(session);
         if (session?.user) {
           const uid = session.user.id;
-          const [{ data: profile }, { data: children }, { data: stories }] = await Promise.all([
+          const [
+            { data: profile },
+            { data: children },
+            { data: stories },
+            { data: characters },
+          ] = await Promise.all([
             supabase.from("profiles").select("*").eq("id", uid).single(),
             supabase.from("child_profiles").select("*").eq("user_id", uid).order("created_at"),
             supabase.from("stories").select("*").eq("user_id", uid).order("created_at", { ascending: false }),
+            supabase.from("characters").select("*").eq("user_id", uid).order("created_at", { ascending: false }),
           ]);
           if (profile) setProfile(profile);
           setChildProfiles(children ?? []);
           setStories(stories ?? []);
+          setCharacters(characters ?? []);
         } else {
           setProfile(null);
           setChildProfiles([]);
           setStories([]);
+          setCharacters([]);
         }
       }
     );

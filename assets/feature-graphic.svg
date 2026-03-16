@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="50%" stop-color="#1a1a4e"/>
+      <stop offset="100%" stop-color="#0d1b3e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow-filter">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="moon-filter">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+  <rect width="1024" height="500" fill="url(#glow)"/>
+  <rect width="1024" height="500" fill="url(#glow2)"/>
+
+  <!-- Stars -->
+  <circle cx="60" cy="60" r="2.5" fill="white" opacity="0.7"/>
+  <circle cx="180" cy="40" r="2" fill="#fde68a" opacity="0.8"/>
+  <circle cx="320" cy="80" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="900" cy="50" r="2.5" fill="white" opacity="0.6"/>
+  <circle cx="970" cy="120" r="2" fill="#fde68a" opacity="0.7"/>
+  <circle cx="820" cy="30" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="50" cy="400" r="2" fill="white" opacity="0.4"/>
+  <circle cx="100" cy="300" r="1.5" fill="#c4b5fd" opacity="0.5"/>
+  <circle cx="980" cy="380" r="2" fill="white" opacity="0.4"/>
+  <circle cx="950" cy="280" r="1.5" fill="#c4b5fd" opacity="0.5"/>
+  <circle cx="400" cy="30" r="1.5" fill="white" opacity="0.4"/>
+  <circle cx="700" cy="470" r="2" fill="#fde68a" opacity="0.4"/>
+
+  <!-- Moon (left side) -->
+  <g filter="url(#moon-filter)" transform="translate(170, 250)">
+    <circle cx="0" cy="0" r="90" fill="url(#moonGrad)"/>
+    <circle cx="40" cy="-25" r="75" fill="#1a1a4e"/>
+    <circle cx="39" cy="-26" r="73" fill="#0f0c29"/>
+  </g>
+
+  <!-- Sparkles around moon -->
+  <g fill="#fde68a" filter="url(#glow-filter)">
+    <polygon points="58,145 65,165 58,185 51,165" opacity="0.9"/>
+    <polygon points="38,165 58,158 78,165 58,172" opacity="0.9"/>
+    <polygon points="268,165 275,183 268,201 261,183" opacity="0.85"/>
+    <polygon points="250,183 268,176 286,183 268,190" opacity="0.85"/>
+    <polygon points="90,330 95,345 90,360 85,345" opacity="0.7"/>
+    <polygon points="75,345 90,339 105,345 90,351" opacity="0.7"/>
+    <polygon points="245,340 250,354 245,368 240,354" opacity="0.65"/>
+    <polygon points="231,354 245,348 259,354 245,360" opacity="0.65"/>
+  </g>
+
+  <!-- Book (center-left) -->
+  <g filter="url(#glow-filter)" transform="translate(370, 250)">
+    <!-- Left page -->
+    <path d="M -155 -120 Q -158 -120 -160 -117 L -160 140 Q -158 146 -150 145 L -5 125 L -5 -125 Z"
+          fill="url(#bookGrad)" opacity="0.95"/>
+    <!-- Right page -->
+    <path d="M 155 -120 Q 158 -120 160 -117 L 160 140 Q 158 146 150 145 L 5 125 L 5 -125 Z"
+          fill="url(#bookGrad)" opacity="0.85"/>
+    <!-- Spine -->
+    <rect x="-5" y="-127" width="10" height="258" rx="3" fill="#c4b5fd"/>
+    <!-- Top highlight -->
+    <path d="M -160 -117 Q -158 -124 -150 -126 L -5 -127 L 5 -127 L 150 -126 Q 158 -124 160 -117"
+          fill="none" stroke="#e0d4ff" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Text lines left page -->
+    <line x1="-140" y1="-70" x2="-12" y2="-78" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+    <line x1="-140" y1="-45" x2="-12" y2="-53" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.25"/>
+    <line x1="-140" y1="-20" x2="-12" y2="-28" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.22"/>
+    <line x1="-140" y1="5" x2="-12" y2="-3" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+    <line x1="-140" y1="30" x2="-60" y2="23" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.14"/>
+
+    <!-- Text lines right page -->
+    <line x1="12" y1="-78" x2="140" y2="-70" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.25"/>
+    <line x1="12" y1="-53" x2="140" y2="-45" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.20"/>
+    <line x1="12" y1="-28" x2="140" y2="-20" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+    <line x1="12" y1="-3" x2="140" y2="5" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.14"/>
+  </g>
+
+  <!-- Floating stars above book -->
+  <circle cx="310" cy="108" r="5" fill="#fde68a" opacity="0.8"/>
+  <circle cx="370" cy="96" r="7" fill="#fde68a" opacity="0.9"/>
+  <circle cx="430" cy="108" r="5" fill="#fde68a" opacity="0.8"/>
+
+  <!-- RIGHT SIDE: App name + tagline -->
+  <!-- App name -->
+  <text x="600" y="210"
+        font-family="Georgia, serif"
+        font-size="68"
+        font-weight="bold"
+        fill="url(#textGrad)"
+        text-anchor="middle"
+        filter="url(#glow-filter)">Histoires</text>
+  <text x="600" y="285"
+        font-family="Georgia, serif"
+        font-size="68"
+        font-weight="bold"
+        fill="url(#textGrad)"
+        text-anchor="middle"
+        filter="url(#glow-filter)">Magiques</text>
+
+  <!-- Divider -->
+  <line x1="460" y1="308" x2="740" y2="308" stroke="rgba(167,139,250,0.4)" stroke-width="1"/>
+
+  <!-- Tagline -->
+  <text x="600" y="342"
+        font-family="Georgia, serif"
+        font-size="22"
+        fill="#c4b5fd"
+        text-anchor="middle"
+        opacity="0.95">L'histoire parfaite, créée pour votre enfant ✨</text>
+
+  <!-- Feature pills -->
+  <rect x="460" y="368" width="130" height="32" rx="16" fill="rgba(124,58,237,0.3)" stroke="rgba(167,139,250,0.4)" stroke-width="1"/>
+  <text x="525" y="389" font-family="sans-serif" font-size="13" fill="#c4b5fd" text-anchor="middle" font-weight="600">✨ IA générative</text>
+
+  <rect x="602" y="368" width="140" height="32" rx="16" fill="rgba(124,58,237,0.3)" stroke="rgba(167,139,250,0.4)" stroke-width="1"/>
+  <text x="672" y="389" font-family="sans-serif" font-size="13" fill="#c4b5fd" text-anchor="middle" font-weight="600">🌍 10 langues</text>
+
+  <rect x="754" y="368" width="146" height="32" rx="16" fill="rgba(124,58,237,0.3)" stroke="rgba(167,139,250,0.4)" stroke-width="1"/>
+  <text x="827" y="389" font-family="sans-serif" font-size="13" fill="#c4b5fd" text-anchor="middle" font-weight="600">👨‍👩‍👧 Personnalisé</text>
+
+  <!-- Bottom stars decoration -->
+  <circle cx="460" cy="450" r="3" fill="#fde68a" opacity="0.5"/>
+  <circle cx="600" cy="460" r="2" fill="white" opacity="0.3"/>
+  <circle cx="740" cy="450" r="3" fill="#fde68a" opacity="0.5"/>
+</svg>

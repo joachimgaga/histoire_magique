@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1a1a5e"/>
+      <stop offset="60%" stop-color="#0f0c29"/>
+      <stop offset="100%" stop-color="#070518"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="moonGlow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
+
+  <!-- Purple glow behind book -->
+  <ellipse cx="512" cy="560" rx="260" ry="200" fill="url(#glow)"/>
+
+  <!-- Stars -->
+  <circle cx="160" cy="130" r="5" fill="#fde68a" opacity="0.9"/>
+  <circle cx="230" cy="220" r="3" fill="white" opacity="0.7"/>
+  <circle cx="310" cy="100" r="4" fill="white" opacity="0.8"/>
+  <circle cx="750" cy="150" r="5" fill="#fde68a" opacity="0.9"/>
+  <circle cx="830" cy="90" r="3" fill="white" opacity="0.6"/>
+  <circle cx="880" cy="200" r="4" fill="white" opacity="0.8"/>
+  <circle cx="120" cy="380" r="3" fill="white" opacity="0.5"/>
+  <circle cx="900" cy="350" r="3" fill="white" opacity="0.6"/>
+  <circle cx="780" cy="420" r="2" fill="white" opacity="0.5"/>
+  <circle cx="200" cy="460" r="2" fill="#c4b5fd" opacity="0.6"/>
+
+  <!-- Moon (top center) -->
+  <g filter="url(#moonGlow)">
+    <circle cx="512" cy="195" r="95" fill="url(#moonGrad)"/>
+    <circle cx="570" cy="165" r="80" fill="#0f0c29"/>
+    <circle cx="568" cy="163" r="78" fill="#070518"/>
+  </g>
+
+  <!-- Book body -->
+  <g filter="url(#softGlow)">
+    <!-- Left page -->
+    <path d="M 250 430 Q 245 430 240 435 L 240 720 Q 245 730 260 728 L 508 700 L 508 420 Z"
+          fill="url(#bookGrad)" opacity="0.95"/>
+    <!-- Right page -->
+    <path d="M 774 430 Q 779 430 784 435 L 784 720 Q 779 730 764 728 L 516 700 L 516 420 Z"
+          fill="url(#bookGrad)" opacity="0.85"/>
+    <!-- Spine -->
+    <rect x="504" y="418" width="16" height="288" rx="4" fill="#c4b5fd"/>
+    <!-- Book top highlight -->
+    <path d="M 240 435 Q 245 425 260 422 L 508 420 L 516 420 L 764 422 Q 779 425 784 435"
+          fill="none" stroke="#e0d4ff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Lines on left page -->
+  <line x1="280" y1="490" x2="490" y2="478" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+  <line x1="280" y1="528" x2="490" y2="516" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.25"/>
+  <line x1="280" y1="566" x2="490" y2="554" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.25"/>
+  <line x1="280" y1="604" x2="490" y2="592" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.20"/>
+  <line x1="280" y1="642" x2="440" y2="632" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- Lines on right page -->
+  <line x1="534" y1="478" x2="744" y2="490" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.25"/>
+  <line x1="534" y1="516" x2="744" y2="528" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.20"/>
+  <line x1="534" y1="554" x2="744" y2="566" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.20"/>
+  <line x1="534" y1="592" x2="744" y2="604" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- Sparkles -->
+  <g fill="#fde68a" filter="url(#softGlow)">
+    <!-- Top-left sparkle -->
+    <polygon points="170,310 180,340 170,370 160,340" opacity="0.9"/>
+    <polygon points="148,340 178,330 208,340 178,350" opacity="0.9"/>
+    <!-- Top-right sparkle -->
+    <polygon points="845,290 855,318 845,346 835,318" opacity="0.85"/>
+    <polygon points="823,318 851,308 879,318 851,328" opacity="0.85"/>
+    <!-- Small sparkle left -->
+    <polygon points="195,580 201,596 195,612 189,596" opacity="0.6"/>
+    <polygon points="179,596 195,590 211,596 195,602" opacity="0.6"/>
+    <!-- Small sparkle right -->
+    <polygon points="830,560 836,574 830,588 824,574" opacity="0.55"/>
+    <polygon points="816,574 830,568 844,574 830,580" opacity="0.55"/>
+  </g>
+
+  <!-- Floating stars above book -->
+  <circle cx="380" cy="395" r="6" fill="#fde68a" opacity="0.8"/>
+  <circle cx="512" cy="375" r="8" fill="#fde68a" opacity="0.9"/>
+  <circle cx="644" cy="395" r="6" fill="#fde68a" opacity="0.8"/>
+</svg>

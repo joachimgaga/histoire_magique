@@ -1,4 +1,7 @@
 import { create } from "zustand";
+import type { Character } from "./characters";
+
+export type { Character };
 
 export interface Profile {
   id: string;
@@ -39,6 +42,7 @@ interface AppState {
   profile: Profile | null;
   stories: Story[];
   childProfiles: ChildProfile[];
+  characters: Character[];
   setProfile: (profile: Profile | null) => void;
   setStories: (stories: Story[]) => void;
   addStory: (story: Story) => void;
@@ -48,12 +52,16 @@ interface AppState {
   updateChildProfile: (profile: ChildProfile) => void;
   removeChildProfile: (id: string) => void;
   incrementStoryCount: () => void;
+  setCharacters: (characters: Character[]) => void;
+  addCharacters: (characters: Character[]) => void;
+  removeCharacter: (id: string) => void;
 }
 
 export const useStore = create<AppState>((set) => ({
   profile: null,
   stories: [],
   childProfiles: [],
+  characters: [],
   setProfile: (profile) => set({ profile }),
   setStories: (stories) => set({ stories }),
   addStory: (story) => set((state) => ({ stories: [story, ...state.stories] })),
@@ -68,4 +76,14 @@ export const useStore = create<AppState>((set) => ({
         ? { ...state.profile, stories_generated_this_month: state.profile.stories_generated_this_month + 1 }
         : null,
     })),
+  setCharacters: (characters) => set({ characters }),
+  addCharacters: (newChars) =>
+    set((state) => ({
+      characters: [
+        ...newChars.filter((nc) => !state.characters.some((c) => c.id === nc.id)),
+        ...state.characters,
+      ],
+    })),
+  removeCharacter: (id) =>
+    set((state) => ({ characters: state.characters.filter((c) => c.id !== id) })),
 }));
